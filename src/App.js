@@ -1,13 +1,12 @@
-import logo from './logo.svg';
 import './App.css';
 import JournalApp from './components/Journal';
 
-function App() {
+  
+  function App() {
   return (
     <div>
      <JournalApp />
     </div>
   );
 }
-
 export default App;
