@@ -1,33 +1,33 @@
 import React, { useState } from "react";
 
 export default function JournalApp() {
-  const [posts, setPosts] = useState([]);
+  const [entries, setEntries] = useState([]);
   const [inputValue, setInputValue] = useState("");
   const [editingIndex, setEditingIndex] = useState(null);
 
-  const addPost = () => {
+  const addEntry = () => {
     if (inputValue) {
       if (editingIndex !== null) {
-        const updatedPosts = posts.map((post, index) =>
-          index === editingIndex ? inputValue : post
+        const updatedEntries = entries.map((entry, index) =>
+          index === editingIndex ? inputValue : entry
         );
-        setPosts(updatedPosts);
+        setEntries(updatedEntries);
         setEditingIndex(null);
       } else {
-        setPosts([inputValue, ...posts]);
+        setEntries([inputValue, ...entries]);
       }
       setInputValue("");
     }
   };
 
-  const editPost = (index) => {
-    setInputValue(posts[index]);
+  const editEntry = (index) => {
+    setInputValue(entries[index]);
     setEditingIndex(index);
   };
 
-  const deletePost = (index) => {
-    const newPosts = posts.filter((_, i) => i !== index);
-    setPosts(newPosts);
+  const deleteEntry = (index) => {
+    const newEntries = entries.filter((_, i) => i !== index);
+    setEntries(newEntries);
     if (editingIndex === index) {
       setInputValue("");
       setEditingIndex(null);
@@ -36,9 +36,14 @@ export default function JournalApp() {
 
   return (
     <div className="text-center">
-      <h2 className="text-2xl font-bold text-center mt-5 mb-5">Pocket Blogger</h2>
-      <p className="mb-5">Write a few lines a day! Click the "Inspiration" button for some quotes to get you started.</p>
-      <div className>
+      <h2 className="text-2xl font-bold text-center mt-5 mb-5">
+        Pocket Blogger
+      </h2>
+      <p className="mb-5">
+        Write a few lines a day! Click the "Inspiration" button for some quotes
+        to get you started.
+      </p>
+      <div className="entryInput">
         <input
           type="text"
           className="text-box"
@@ -46,27 +51,26 @@ export default function JournalApp() {
           onChange={(e) => setInputValue(e.target.value)}
           placeholder="Your words here..."
         />
-        <button className="btn btn-primary" onClick={addPost}>
-          {editingIndex !== null ? "Update" : "Post"}
+      </div>
+      <div>
+        <button className="btn btn-primary" onClick={addEntry}>
+          {editingIndex !== null ? "Update Entry" : "Add Entry"}
         </button>
       </div>
       <ul>
-        {posts.map((post, index) => (
-          <li
-            key={index}
-            className="blogPost"
-          >
-            <p>{post}</p>
+        {entries.map((entry, index) => (
+          <li key={index} className="blogPost">
+            <p>{entry}</p>
             <div>
               <button
                 className="btn btn-primary"
-                onClick={() => editPost(index)}
+                onClick={() => editEntry(index)}
               >
                 Edit
               </button>
               <button
                 className="btn btn-primary"
-                onClick={() => deletePost(index)}
+                onClick={() => deleteEntry(index)}
               >
                 Delete
               </button>
