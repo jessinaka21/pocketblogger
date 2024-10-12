@@ -57,6 +57,9 @@ export default function JournalApp() {
           {editingIndex !== null ? "Update Entry" : "Add Entry"}
         </button>
       </div>
+      <h2 className="text-2xl font-bold text-center mt-5 mb-5">
+        Previous Entries
+      </h2>
       <ul>
         {entries.map((entry, index) => (
           <li key={index} className="blogPost">
