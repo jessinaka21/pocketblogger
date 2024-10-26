@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import ChangeTheme from "./ChangeTheme";
 
 export default function JournalApp() {
   const [entries, setEntries] = useState([]);
@@ -36,13 +37,13 @@ export default function JournalApp() {
 
   return (
     <div className="text-center">
-      <h2 className="text-2xl font-bold text-center mt-5 mb-5">
-        Pocket Blogger
-      </h2>
-      <p className="mb-5">
-        Write a few lines a day! Click the "Inspiration" button for some quotes
-        to get you started.
-      </p>
+        <div className="header-container">
+          <img src="notepad.png" alt="Notepad" className="inline-image" />
+          <h1 className="text-2xl font-bold mt-5 mb-5">Pocket Blogger</h1>
+          <img src="coffeecup.png" alt="Coffee Cup" className="inline-image" />
+        </div>
+
+      <p className="mb-5">Write a few lines a day!</p>
       <div className="entryInput">
         <input
           type="text"
