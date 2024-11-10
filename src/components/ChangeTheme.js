@@ -1,14 +1,30 @@
-import { useState } from "react";
+import { useContext, useEffect } from "react";
+import { ThemeContext } from "../context/ThemeContext";
 
-export default function ChangeTheme() {
-    const [theme, setTheme] = useState('autumn');
+const CurrentTheme = () => {
+  const { currentTheme, setTheme } = useContext(ThemeContext);
 
-    return (
-      <div>
-        <button onClick={() => setTheme("spring")}>Spring</button>
-        <button onClick={() => setTheme("summer")}>Summer</button>
-        <button onClick={() => setTheme("autumn")}>Autumn</button>
-        <button onClick={() => setTheme("winter")}>Winter</button>
-      </div>
-    );
-} 
+  useEffect(() => {
+    document.body.className = currentTheme;
+  }, [currentTheme]);
+
+  return (
+    <div className="button-container">
+      <p className="mt-3 mb-3">Change Theme</p>
+      <button class="btn btn-spring" onClick={() => setTheme("spring")}>
+        Spring
+      </button>
+      <button class="btn btn-summer" onClick={() => setTheme("summer")}>
+        Summer
+      </button>
+      <button class="btn btn-autumn" onClick={() => setTheme("autumn")}>
+        Autumn
+      </button>
+      <button class="btn btn-winter" onClick={() => setTheme("winter")}>
+        Winter
+      </button>
+    </div>
+  );
+};
+
+export default CurrentTheme;

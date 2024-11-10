@@ -1,21 +1,54 @@
-@import url('https://fonts.googleapis.com/css2?family=Chewy&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Chewy&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap");
+
+/* Base theme: autumn */
+.autumn {
+  --background-color: #d7d2c35d;
+  --primary-color: #8b4513;
+  --secondary-color: #d2691e;
+  --text-color: #442211;
+}
+
+/* Spring theme */
+.spring {
+  --background-color: #99d57977;
+  --primary-color: #90ee90;
+  --secondary-color: #98fb98;
+  --text-color: #228b22;
+}
+
+/* Summer theme */
+.summer {
+  --background-color: #fffffffd;
+  --primary-color: #ffd700;
+  --secondary-color: #ffa500;
+  --text-color: #ff8c00;
+}
+
+/* Winter theme */
+.winter {
+  --background-color: #85e2fee7;
+  --primary-color: #87ceeb;
+  --secondary-color: #b0e0e6;
+  --text-color: #4682b4;
+}
 
 .App {
   text-align: center;
 }
 
 body {
-  background-color: #d7d2c35d;
-  font-family: 'Raleway', sans-serif;
+  font-family: "Raleway", sans-serif;
+  background-color: var(--background-color);
 }
 
 p {
   font-size: 20px;
 }
 
-h1, h2 {
-  font-family: 'Chewy', sans-serif;
-  color:#481c04ea;
+h1,
+h2 {
+  font-family: "Chewy", sans-serif;
+  color: #481c04ea;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
@@ -24,17 +57,16 @@ h1 {
 }
 
 .header-container {
-  display: flex;             
-  align-items: center;       
-  justify-content: center; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .inline-image {
-  width: 80px;            
-  height: auto;             
-  margin: 0 10px;           
+  width: 80px;
+  height: auto;
+  margin: 0 10px;
 }
-
 
 ul {
   list-style-type: none;
@@ -52,12 +84,33 @@ ul {
   margin: 5px;
 }
 
-.btn:hover {
+.btn-primary:hover {
   background-color: #4e3b3194;
 }
 
 .btn-primary {
   background-color: #4e3b31d4;
+}
+
+.btn-spring {
+  background-color: #99d57977;
+  color: black;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+.btn-summer {
+  background-color: #fffffffd;
+  color: black;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+.btn-autumn {
+  background-color: #d7d2c35d;
+  color: black;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+.btn-winter {
+  background-color: #85e2fee7;
+  color: black;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .text-box {
