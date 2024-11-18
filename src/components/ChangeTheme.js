@@ -10,7 +10,7 @@ const CurrentTheme = () => {
 
   return (
     <div className="button-container">
-      <p className="mt-3 mb-3">Change Theme</p>
+      <p className="mt-3 mb-3">Choose a Theme:</p>
       <button class="btn btn-spring" onClick={() => setTheme("spring")}>
         Spring
       </button>
