@@ -1,15 +1,31 @@
 .spring {
   background-color: #b5ee9677;
 }
+.spring h1,
+.spring h2 {
+  color: #164e0e;
+}
 
 .summer {
   background-color: #fffffffd;
+}
+.summer h1,
+.summer h2 {
+  color: #f0c960;
 }
 
 .autumn {
   background-color: #d7d2c35d;
 }
+.autumn h1,
+.autumn h2 {
+  color: #481c04ea;
+}
 
 .winter {
   background-color: #85e2fee7;
+}
+.winter h1,
+.winter h2 {
+  color: #1b4965;
 }

@@ -6,7 +6,6 @@
 
 body {
   font-family: "Raleway", sans-serif;
-  background-color: var(--background-color);
 }
 
 p {
@@ -42,10 +41,18 @@ ul {
 
 .blogPost {
   margin: 25px auto;
-  border-bottom-style: outset;
-  background-color: #ffffff9f;
-  padding: 15px;
+  padding: 24px;
   width: 80%;
+  background-color: rgba(255, 255, 255, 0.95);
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  border: none;
+}
+
+.blogPost:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
 }
 
 .text-box {
@@ -58,12 +65,14 @@ ul {
   margin: 5px;
 }
 
-.btn-primary:hover {
-  background-color: #4e3b3194;
-}
-
 .btn-primary {
   background-color: #4e3b31d4;
+}
+
+.btn-primary:hover {
+  background-color: #4e3b3194;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
 }
 
 /* Theme Buttons */
@@ -73,18 +82,38 @@ ul {
   color: black;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
+.btn-spring:hover {
+  background-color: rgba(128, 128, 128, 0.455);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+}
 .btn-summer {
   background-color: #fffffffd;
   color: black;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+.btn-summer:hover {
+  background-color: rgba(128, 128, 128, 0.455);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
 }
 .btn-autumn {
   background-color: #d7d2c35d;
   color: black;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
+.btn-autumn:hover {
+  background-color: rgba(128, 128, 128, 0.455);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+}
 .btn-winter {
   background-color: #85e2fee7;
   color: black;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+.btn-winter:hover {
+  background-color: rgba(128, 128, 128, 0.455);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
 }
