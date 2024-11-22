@@ -1,28 +1,41 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import ChangeTheme from "./ChangeTheme";
 
 export default function JournalApp() {
-  const [entries, setEntries] = useState([]);
+  const [entries, setEntries] = useState(() => {
+    const savedEntries = localStorage.getItem("journalEntries");
+    return savedEntries ? JSON.parse(savedEntries) : [];
+  });
   const [inputValue, setInputValue] = useState("");
   const [editingIndex, setEditingIndex] = useState(null);
+
+  useEffect(() => {
+    localStorage.setItem("journalEntries", JSON.stringify(entries));
+  }, [entries]);
 
   const addEntry = () => {
     if (inputValue) {
       if (editingIndex !== null) {
         const updatedEntries = entries.map((entry, index) =>
-          index === editingIndex ? inputValue : entry
+          index === editingIndex
+            ? { content: inputValue, timestamp: entry.timestamp }
+            : entry
         );
         setEntries(updatedEntries);
         setEditingIndex(null);
       } else {
-        setEntries([inputValue, ...entries]);
+        const newEntry = {
+          content: inputValue,
+          timestamp: new Date().toLocaleString(),
+        };
+        setEntries([newEntry, ...entries]);
       }
       setInputValue("");
     }
   };
 
   const editEntry = (index) => {
-    setInputValue(entries[index]);
+    setInputValue(entries[index].content);
     setEditingIndex(index);
   };
 
@@ -37,11 +50,11 @@ export default function JournalApp() {
 
   return (
     <div className="text-center">
-        <div className="header-container">
-          <img src="notepad.png" alt="Notepad" className="inline-image" />
-          <h1 className="text-2xl font-bold mt-5 mb-5">Pocket Blogger</h1>
-          <img src="coffeecup.png" alt="Coffee Cup" className="inline-image" />
-        </div>
+      <div className="header-container">
+        <img src="notepad.png" alt="Notepad" className="inline-image" />
+        <h1 className="text-2xl font-bold mt-5 mb-5">Pocket Blogger</h1>
+        <img src="coffeecup.png" alt="Coffee Cup" className="inline-image" />
+      </div>
 
       <p className="mb-5">Write a few lines a day!</p>
       <div className="entryInput">
@@ -64,7 +77,8 @@ export default function JournalApp() {
       <ul>
         {entries.map((entry, index) => (
           <li key={index} className="blogPost">
-            <p>{entry}</p>
+            <p>{entry.content}</p>
+            <small className="text-gray-500">{entry.timestamp}</small>
             <div>
               <button
                 className="btn btn-primary"

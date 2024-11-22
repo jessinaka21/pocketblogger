@@ -1,37 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Chewy&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap");
 
-/* Base theme: autumn */
-.autumn {
-  --background-color: #d7d2c35d;
-  --primary-color: #8b4513;
-  --secondary-color: #d2691e;
-  --text-color: #442211;
-}
-
-/* Spring theme */
-.spring {
-  --background-color: #b5ee9677;
-  --primary-color: #90ee90;
-  --secondary-color: #98fb98;
-  --text-color: #228b22;
-}
-
-/* Summer theme */
-.summer {
-  --background-color: #fffffffd;
-  --primary-color: #ffd700;
-  --secondary-color: #ffa500;
-  --text-color: #ff8c00;
-}
-
-/* Winter theme */
-.winter {
-  --background-color: #85e2fee7;
-  --primary-color: #87ceeb;
-  --secondary-color: #b0e0e6;
-  --text-color: #4682b4;
-}
-
 .App {
   text-align: center;
 }
@@ -80,6 +48,12 @@ ul {
   width: 80%;
 }
 
+.text-box {
+  border-radius: 10px;
+  padding: 45px;
+  width: 70%;
+}
+
 .btn {
   margin: 5px;
 }
@@ -91,6 +65,8 @@ ul {
 .btn-primary {
   background-color: #4e3b31d4;
 }
+
+/* Theme Buttons */
 
 .btn-spring {
   background-color: #99d57977;
@@ -111,10 +87,4 @@ ul {
   background-color: #85e2fee7;
   color: black;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.text-box {
-  border-radius: 10px;
-  padding: 45px;
-  width: 70%;
 }
